@@ -7,9 +7,9 @@
   Each button in the UI talks to different REST end points. The code was deployed on App Service (.NET Core 3) and not a Static Web Site.
   
 
-   1. Product - Communicates with Azure SQL DB using Node.js
+   1. Products - Communicates with Azure SQL DB using Node.js
 
-   1. File - Communicates with Azure blob storage using Node.js
+   1. Files - Communicates with Azure blob storage using Node.js
 
    1. School - Communicates with Azure Cosmos DB using Node.js
 
@@ -145,4 +145,26 @@ CONGRATULATIONS. If you are redirct to Microsoft login page and after login redi
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Run `ng build --prod` for a production build.
+
+## Step 5: When the app funtions correctly, after Azure AD login you should see the following screens
+
+1. Dashboard
+
+![RG Basic Tab](images/ScreenShot-1.PNG)
+&nbsp;
+
+1. Products
+
+![RG Basic Tab](images/ScreenShot-2.PNG)
+&nbsp;
+
+1. Files
+
+![RG Basic Tab](images/ScreenShot-3.PNG)
+&nbsp;
+
+1. School
+
+![RG Basic Tab](images/ScreenShot-4.PNG)
+&nbsp;
 
