@@ -22,7 +22,7 @@ https://angui-2-nodejs.azurewebsites.net/
 1. Clone the repository
 
       ```bash
-      git clone https://github.com/RobinGhosh64/angui-2-nodejs.git
+      git clone https://github.com/RobinGhoshATL/angui-2-nodejs.git
       cd angui-2-nodejs 
       ```
   This application does external Authentication with Azure AD. Use Azure Active Directory to create App registration. Use the following steps to get app registration details.
