@@ -1,19 +1,20 @@
 # Developing Angular UI with Azure AD authentication (using MSAL) communicating with NodeJS back end
 
-  This sample shows you how to create a univseral authentication with Azure. The token is then used by the auth interceptor every time it needs to talk to back-end service.
+  This sample shows you how to create a universal authentication with Azure. The token is then used by the auth interceptor every time it needs to talk to back-end service.
   We are showing capabilities how to talk to multiple back-end services written in different languages that communicate with different Azure services.
-  These back-end services are itself REST API complaint services. Source code to those services are available.
+  These back-end services are itself REST API complaint services. Source code to these services are available.
    
   Each button in the UI talks to different REST end points. The code was deployed on App Service (.NET Core 3) and not a Static Web Site.
-  
+  &nbsp;
+   1. Dashboard - Shows Analytics View from test traffic results
 
-   1. Products - Communicates with Azure SQL DB using Node.js
+   2. Products - Communicates with Azure SQL DB using Node.js
 
-   1. Files - Communicates with Azure blob storage using Node.js
+   3. Files - Communicates with Azure blob storage using Node.js
 
-   1. School - Communicates with Azure Cosmos DB using Node.js
+   4. School - Communicates with Azure Cosmos DB using Node.js
 
-   1. PS Script - Uses SignalR services to fire a Power Shell script execution and returns the long waiting response back to the UI
+   5. PS Script - Uses SignalR services to fire a Power Shell script execution and returns the long waiting response back to the UI
    
 Link to the working Angular UI
 https://angui-2-nodejs.azurewebsites.net/
