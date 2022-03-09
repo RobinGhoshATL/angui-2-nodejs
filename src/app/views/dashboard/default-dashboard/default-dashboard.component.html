@@ -1,0 +1,104 @@
+<!-- Dashboard card row -->
+<div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{scale:'.9',delay:'300ms'}}">
+        <mat-card>
+            <a routerLink="/dashboard/products">
+                <mat-card-title fxLayoutAlign="start center">
+                    <span class="text-muted">Products</span>
+                    <span fxFlex></span>
+                    <!-- <mat-chip class="icon-chip" color="primary" selected="true">
+                        <mat-icon>group</mat-icon> 
+                        <span class="count">{{counts.Products}}</span>
+                    </mat-chip> -->
+                </mat-card-title>
+                <mat-card-content>
+                    <h3 class="m-0 font-normal"></h3>
+                    <span class="text-muted"></span>
+                </mat-card-content>
+            </a>
+        </mat-card>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'300ms',scale:'.9'}}">
+        <mat-card>
+            <a>
+                <mat-card-title fxLayoutAlign="start center">
+                    <span class="text-muted">Assets</span>
+                    <span fxFlex></span>
+                    <!-- <mat-chip class="icon-chip" color="primary" selected="true">
+                        <mat-icon>group_work</mat-icon> 
+                        <span class="count">{{counts.users}}</span> 
+                    </mat-chip> -->
+                </mat-card-title>
+                <mat-card-content>
+                    <h3 class="m-0 font-normal"></h3>
+                    <span class="text-muted"></span>
+                </mat-card-content>
+            </a>
+        </mat-card>
+    </div>
+
+    <!-- <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'300ms',scale:'.9'}}">
+        <mat-card>
+            <mat-card-title fxLayoutAlign="start center">
+                <span class="text-muted">Processors</span>
+                <span fxFlex></span>
+                <mat-chip class="icon-chip" color="primary" selected="true">
+                    <span class="count">{{counts.processors}}</span>
+                </mat-chip>
+            </mat-card-title>
+            <mat-card-content>
+                <h3 class="m-0 font-normal"></h3>
+                <span class="text-muted"></span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'300ms',scale:'.9'}}">
+        <mat-card>
+            <mat-card-title fxLayoutAlign="start center">
+                <span class="text-muted">Databases</span>
+                <span fxFlex></span>
+                <mat-chip class="icon-chip" color="primary" selected="true">
+                    <span class="count">{{counts.databases}}</span>
+                </mat-chip>
+            </mat-card-title>
+            <mat-card-content>
+                <h3 class="m-0 font-normal"></h3>
+                <span class="text-muted"></span>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+
+</div>
+<div fxLayout="row wrap">
+    <!-- <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'300ms',scale:'.9'}}">
+        <mat-card>
+            <mat-card-title fxLayoutAlign="start center">
+                <span class="text-muted">Servers</span>
+                <span fxFlex></span>
+                <mat-chip class="icon-chip" color="primary" selected="true">
+                    <span class="count">{{counts.servers}}</span>
+                </mat-chip>
+            </mat-card-title>
+            <mat-card-content>
+                <h3 class="m-0 font-normal"></h3>
+                <span class="text-muted"></span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" [@animate]="{value:'*',params:{delay:'300ms',scale:'.9'}}">
+        <mat-card>
+            <mat-card-title fxLayoutAlign="start center">
+                <span class="text-muted">Clusters</span>
+                <span fxFlex></span>
+                <mat-chip class="icon-chip" color="primary" selected="true">
+                    <span class="count">{{counts.clusters}}</span>
+                </mat-chip>
+            </mat-card-title>
+            <mat-card-content>
+                <h3 class="m-0 font-normal"></h3>
+                <span class="text-muted"></span>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+</div>

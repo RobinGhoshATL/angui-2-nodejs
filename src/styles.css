@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.topbar-dark-blue .topbar.mat-toolbar, .sidebar-panel .navigation-hold{
+    background: #fff !important;
+    color: #002950 !important;
+}
+.sidebar-dark-blue .navigation-hold .icon-menu .mat-raised-button, .sidebar-dark-blue .navigation-hold .branding {
+    background: #212529 !important;
+}

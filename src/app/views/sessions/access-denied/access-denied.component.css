@@ -1,0 +1,7 @@
+.app-error{
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.app-error .error-actions{
+    margin-top: 50px;
+}

@@ -1,0 +1,91 @@
+ 
+<mat-card class="p-0">
+    <mat-card-title class="content-mat-title text-center" color="ancent" style="padding: 10px;">
+        <form [formGroup]="itemForm">
+        <div class="row">
+         
+           <div class="col-md-5 col-sm-12">
+                <div fxFlex="100" fxFlex.gt-xs="100">
+                    <input type="text" placeholder="Enter Path or URL" formControlName="path" class="form-control" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <button mat-raised-button color="primary" (click)="searchPath()" [disabled]="itemForm.invalid">Search</button>
+                <span  class="cursor-pointer font-14 pl-3 clear-filter" matTooltip="Clear search filter" (click)="clear()">Clear</span>
+            </div>
+         
+        </div>
+    </form>
+    </mat-card-title>
+</mat-card>
+
+
+
+
+
+<!-- <form [formGroup]="itemForm">
+     <div fxFlex="100" fxFlex.gt-xs="100">
+        <div class="col-md-5 col-sm-12">
+            <div fxFlex="100" fxFlex.gt-xs="100">
+                <input type="text" placeholder="Enter Script Path or Address." formControlName="path" class="form-control" matTooltip="Use 3 or more charactors to search client"  type="text" >
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+            <button mat-raised-button color="primary" >Search</button>
+            <span  class="cursor-pointer font-14 pl-3 clear-filter" matTooltip="Clear search filter" >Clear</span>
+        </div>
+     </div>
+   
+</form> -->
+
+<div class="mt-4" *ngIf="value != -1" class="d-flex justify-content-center spinner__loading">
+    <div>
+      <mat-progress-spinner
+        diameter="200"
+        [value]="value"
+        mode="determinate">
+        </mat-progress-spinner>
+    </div>
+  </div>
+
+
+<div *ngIf="value != -1"  class="d-flex justify-content-center mt-2" >
+   {{percentage}}
+</div>
+
+<div id= "clear">
+<div *ngIf="reponse"  class="mt-5" >
+  
+    <div class="response" *ngFor="let item of reponse"
+        style="padding: 5px;">
+        <div *ngIf="item?.response?.filePath !== null" class="font-14 mt-2">
+            <b>File Path:</b> {{
+            item?.response?.filePath
+            }}
+        </div>
+        <div *ngIf="item.response !== null">
+            <b>Response:</b>
+            <mat-icon class="icon-lg mr-1 ml-4 pt-2 verticalMiddle"
+            [style.color]="response_success === true ? 'green' : 'red'"
+            >
+      {{
+      getIsSuccessIcon(response_success)
+      }}
+  </mat-icon>
+            <span 
+                *ngFor="let result of item.response.response">
+                <span [innerHTML]="result"
+                    style="white-space: pre;"></span>
+            </span>
+        </div>
+        <div *ngIf="isDebug">
+            <b>Script:</b> {{ item?.response?.scriptContent }}
+        </div>
+        <span *ngIf="isPath">{{ item.message }}</span>
+    </div>
+</div>
+</div>
+
+
+
+

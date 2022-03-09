@@ -1,0 +1,70 @@
+<mat-card class="p-0" [@animate]="{value:'*',params:{y:'50px',delay:'300ms'}}">
+    <mat-card-title class="content-mat-title text-center" color="ancent" style="padding: 10px;">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 pt-0">
+                <label class="control-label"> Search Product:</label>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <input type="text"  id="search" matTooltip="Search by product details" class="form-control" type="text" #search>
+            </div>
+        </div>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="row" class="ml-2">
+            <button mat-raised-button class="mb-05" color="primary" (click)="addProduct({}, true, false)">Add Product</button>
+            <button mat-raised-button class="mb-05 ml-3" color="primary" (click)="addProduct({}, true, true)">Bulk Import</button>
+        </div>
+       
+        <div *ngIf="items?.length > 0;else noProducts">
+            <ngx-datatable class="material striped" [rows]="items" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"  [scrollbarH]="false" [limit]="7" [rowHeight]="50" >
+
+                <ngx-datatable-column name="ID" [sortable]="true" prop="id" [maxWidth]="50">
+                    <ng-template let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                        {{ rowIndex + 1}}
+                    </ng-template>
+                </ngx-datatable-column>
+                
+
+                <ngx-datatable-column name="Image" [sortable]="true" prop="small_image"  >
+                    <ng-template let-row="row" ngx-datatable-cell-template >
+                    <div id="picture">
+                        <a class="small"> <img mat-list-avatar class="mr-1 " [src]='row?.small_image' alt="" (error)="onImgError($event)" 
+                            style=" height: auto !important;">
+                         <img mat-list-avatar class="mr-1 large" [src]="row?.small_image"  alt=""></a></div>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Name" [sortable]="true"  prop="name"  [width]="200">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        <p  matTooltip="{{row?.name}}" class="myClass">{{ row?.name}}</p>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="description" [sortable]="true" [width]="150"  prop="description"  >
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        <p  matTooltip="{{row?.description}}" class="description">{{ row?.description}}</p>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Price" [sortable]="true"  prop="retail_price">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        <p><span style="text-decoration: line-through; text-decoration-color: red; font-size: 15px;">${{ row?.retail_price }}</span>
+                             <b style="font-size: 15px; font-weight: bold;"> &nbsp;&nbsp; ${{ row?.sale_price}}</b></p>
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Action" [flexGrow]="1" [sortable]="true"  prop="sale_price">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        <button mat-icon-button mat-sm-button  matTooltip="Update Product"  style="color: #10174c;" (click)="addProduct(row)"><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button mat-sm-button  matTooltip="Delete Product"  style="color: #10174c;" (click)="deleteProduct(row)"><mat-icon>delete</mat-icon></button>
+                    </ng-template>
+                </ngx-datatable-column>
+
+            </ngx-datatable>
+        </div>
+        <ng-template #noProducts>
+            <h5 matDialogTitle class="p-1 m-1" style="text-align: center;">{{ noProductsText }}</h5>
+        </ng-template>
+</mat-card-content>
+</mat-card>
+

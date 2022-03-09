@@ -1,0 +1,42 @@
+<div class="sidebar-panel">
+    <div id="scroll-area" [perfectScrollbar] class="navigation-hold" fxLayout="column">
+        <div class="sidebar-hold">
+
+            <!-- App Logo -->
+            <div class="branding">
+                <img src="assets/images/angular-logo.png" alt="" class="app-logo" style="width: 100%;">
+              
+                <span style="margin: auto" *ngIf="layoutConf.sidebarStyle !== 'compact'"></span>
+                <div class="sidebar-compact-switch" [ngClass]="{active: layoutConf.sidebarCompactToggle}" (click)="toggleCollapse()" *ngIf="layoutConf.sidebarStyle !== 'compact'"><span></span></div>
+            </div>
+
+            <!-- Sidebar user -->
+            <div class="app-user">
+                <div class="app-user-photo">
+                        <img [src]="getSanitizeUrl(profileImage)" class="mat-elevation-z1"  alt="{{ username }}" *ngIf="profileAvaiable">
+                        <ngx-avatar name=" {{ username }}" size="70" *ngIf="!profileAvaiable"></ngx-avatar>
+                   
+                </div>
+                <span class="app-user-name mb-05">
+                <mat-icon class="icon-xs text-muted">lock</mat-icon> 
+                   <span class="username"> {{ username }} </span>
+                </span>
+                <!-- Small buttons -->
+                <div class="app-user-controls">
+                    <button class="text-muted" mat-icon-button mat-xs-button  [routerLink]="['/dashboard/profile/settings']">
+                    <mat-icon>settings</mat-icon>
+                </button>
+                    <!--<button class="text-muted" mat-icon-button mat-xs-button matTooltip="Inbox" routerLink="/dashboard/default">
+                  <mat-icon>email</mat-icon>
+                </button>-->
+                    <button class="text-muted" mat-icon-button mat-xs-button matTooltip="Sign Out" (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                </button>
+                  
+                </div>
+            </div>
+            <!-- Navigation -->
+            <app-sidenav [items]="menuItems" [hasIconMenu]="hasIconTypeMenuItem" [iconMenuTitle]="iconTypeMenuTitle"></app-sidenav>
+        </div>
+    </div>
+</div>

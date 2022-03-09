@@ -1,0 +1,34 @@
+<mat-toolbar class="topbar">
+    <!-- Sidenav toggle button -->
+    <button *ngIf="layoutConf.sidebarStyle !== 'compact'" mat-icon-button id="sidenavToggle" (click)="toggleSidenav()" matTooltip="Toggle Hide/Open">
+    <mat-icon>menu</mat-icon>
+  </button>
+  Angular Demo <span style="font-size: medium; margin-left: 1%;">(MSAL connect to Azure)</span>
+  <span fxFlex></span>
+
+    <!-- Open "views/search-view/result-page.component" to understand how to subscribe to input field value -->
+
+    <!-- Notification toggle button -->
+    <button mat-icon-button matTooltip="Notifications" (click)="toggleNotific()" [style.overflow]="'visible'" class="topbar-button-right">
+    <mat-icon>notifications</mat-icon>
+    <span class="notification-number mat-bg-warn">0</span>
+  </button>
+    <!-- Top left user menu -->
+    <button mat-icon-button [matMenuTriggerFor]="accountMenu" class="topbar-button-right img-button">
+  
+      <img [src]="getSanitizeUrl(profileImage)" alt="{{ username }}" *ngIf="profileAvaiable">
+      <ngx-avatar name=" {{ username }}" size="40" *ngIf="!profileAvaiable"></ngx-avatar>
+  
+  </button>
+
+    <mat-menu #accountMenu="matMenu">
+     <button mat-menu-item [routerLink]="['/dashboard/profile/settings']">
+        <mat-icon>account_box</mat-icon>
+        <span>Profile</span>
+      </button>
+         <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>{{ "SIGNOUT" | translate }}</span>
+    </button>
+    </mat-menu>
+</mat-toolbar>

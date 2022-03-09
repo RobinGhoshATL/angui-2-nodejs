@@ -1,0 +1,62 @@
+<mat-card class="p-0" [@animate]="{value:'*',params:{y:'50px',delay:'300ms'}}">
+    <mat-card-title class="content-mat-title text-center" color="ancent" style="padding: 10px;">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 pt-0">
+                <label class="control-label"> Search File:</label>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <input type="text"  id="search" matTooltip="Search file" class="form-control" type="text" #search>
+            </div>
+        </div>
+    </mat-card-title>
+    <mat-card-content>
+        <div class="row" class="ml-2">
+            <button mat-raised-button class="mb-05" color="primary" (click)="addFile({}, true)">Add File</button>
+        </div>
+       
+        <div *ngIf="items?.length > 0;else noProducts">
+            <ngx-datatable class="material striped" [rows]="items" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"  [scrollbarH]="false" [limit]="7" [rowHeight]="50" >
+
+                <ngx-datatable-column name="ID" [sortable]="true" prop="id" [maxWidth]="180">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        {{ row?.id }}
+                    </ng-template>
+                </ngx-datatable-column>
+                
+
+                <ngx-datatable-column name="Name" [sortable]="true" prop="name" >
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        {{ row?.name }}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <!-- <ngx-datatable-column name="Size" [sortable]="true" prop="size" [maxWidth]="150">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        {{ row?.size}}
+                    </ng-template>
+                </ngx-datatable-column> -->
+
+                <ngx-datatable-column name="Processed" [sortable]="true" prop="processed" >
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        {{ row?.processed}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Active" [flexGrow]="1" [sortable]="true" prop="isActive">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                        {{ row?.isActive}}
+                    </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="URL" [sortable]="true" prop="url" >
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                       <a href="{{row?.url}}" target="_blank"> Click here </a>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+        <ng-template #noProducts>
+            <h5 matDialogTitle class="p-1 m-1" style="text-align: center;">{{ noProductsText }}</h5>
+        </ng-template>
+</mat-card-content>
+</mat-card>

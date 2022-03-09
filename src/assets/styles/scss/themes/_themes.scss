@@ -1,0 +1,6 @@
+@import '~@angular/material/theming';
+@include mat-core();
+// Keep atleast one file
+@import "plenarea-blue";
+$background: map-get($egret-theme, background);
+$foreground: map-get($egret-theme, foreground);

@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title class="content-mat-title text-center" color="ancent" style="padding: 5px;">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 pt-0">
+                <label class="control-label"> School Details</label>
+            </div>
+        </div>
+    </mat-card-title>
+<pre><p *ngFor="let item of schoolData">{{item}}</p></pre>
+<h5 *ngIf="noSchoolData" matDialogTitle class="p-1 m-1" style="text-align: center;">School details not found</h5>
+</mat-card>
