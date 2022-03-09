@@ -150,21 +150,21 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 1. Dashboard
 
-![RG Basic Tab](images/ScreenShot-1.PNG)
+![RG Basic Tab](images/ScreenShot-1.png)
 &nbsp;
 
-1. Products
+2. Products
 
-![RG Basic Tab](images/ScreenShot-2.PNG)
+![RG Basic Tab](images/ScreenShot-2.png)
 &nbsp;
 
-1. Files
+3. Files
 
-![RG Basic Tab](images/ScreenShot-3.PNG)
+![RG Basic Tab](images/ScreenShot-3.png)
 &nbsp;
 
-1. School
+4. School
 
-![RG Basic Tab](images/ScreenShot-4.PNG)
+![RG Basic Tab](images/ScreenShot-4.png)
 &nbsp;
 
