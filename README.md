@@ -160,11 +160,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 3. Files
 
-![RG Basic Tab](images/ScreenShot-3.png)
+![RG Basic Tab](images/ScreenShot-4.png)
 &nbsp;
 
 4. School
 
-![RG Basic Tab](images/ScreenShot-4.png)
+![RG Basic Tab](images/ScreenShot-3.png)
 &nbsp;
 
